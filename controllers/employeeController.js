@@ -1,6 +1,7 @@
 const express = require('express');
 const ObjectId = require('mongoose').Types.ObjectId;
 var router = express.Router();
+const cors = require('cors');
 
 var {Employee} = require ('../models/employee')
 
@@ -25,7 +26,7 @@ router.get('/:id', (req,res) => {
     })
 })
 
-router.post('/', (req,res) => {
+router.post('/',cors(),  (req,res) => {
     var emp = new Employee({
         name: req.body.name,
         position: req.body.position,
