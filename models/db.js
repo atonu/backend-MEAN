@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 try {
-    mongoose.connect('mongodb://localhost:27017/CrudDB',{useNewUrlParser:true, useUnifiedTopology: true}), (err) => {
+    mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true, useUnifiedTopology: true}), (err) => {
     if (!err){
         console.log('successfull');
     } else {
